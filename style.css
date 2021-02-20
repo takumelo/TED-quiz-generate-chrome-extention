@@ -1,0 +1,89 @@
+html {
+    width: 400px;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+body {
+    padding: 8px 16px;
+}
+
+.title img {
+    display: inline-block;
+    width: 100%;
+    margin: 8px 0px;
+}
+
+.grid_box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 8px;
+}
+
+#input_wrap{
+    grid-row: 1;
+    grid-column: 1 / 4;
+    align-self: center;
+    /* justify-self: center; */
+}
+
+#btn_wrap{
+    grid-row: 2;
+    grid-column: 1;
+    align-self: center;
+    justify-self: stretch;
+}
+
+#check_wrap{
+    grid-row: 2;
+    grid-column: 2;
+    align-self: center;
+    justify-self: stretch;
+}
+
+#reset_wrap{
+    grid-row: 2;
+    grid-column: 3;
+    align-self: center;
+    justify-self: stretch;
+}
+
+button {
+    border: none;
+    border-bottom: solid 10px rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: .2s;
+    background-color: rgb(94, 94, 94);
+    color: rgb(248, 248, 248);
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+}
+
+button:hover {
+    transform: translateY(3px);
+    border-bottom: solid 7px rgb(0, 0, 0);
+    cursor : pointer;
+}
+
+button:active{
+    transform: translateY(5px);
+    border-bottom: solid 5px rgb(0, 0, 0);
+}
+
+input{
+    padding: 8px 16px;
+    border: solid;
+    border-color: rgb(0, 0, 0);
+    transition: .4s;
+}
+
+input:focus{
+    border-color: rgb(255, 255, 255);
+}
