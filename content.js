@@ -70,7 +70,8 @@ class DomManager {
     }
     _replaceDom(obj, id) {
         // console.log("replace targets parent:" + obj.parentNode.text);
-        obj.outerHTML = `<input type="text" id="${id}" name="Q" size="${obj.text.length}">`;
+        const borderStyle = "border: 1px solid rgba(217,30,24,1); outline:none;";
+        obj.outerHTML = `<input type="text" id="${id}" name="Q" size="${obj.textContent.length}" style="${borderStyle}">`;
     }
     resetDomList() {
         let inputList = document.querySelectorAll("input[name='Q']");
@@ -79,12 +80,12 @@ class DomManager {
             dom.outerHTML = this.ansDataList[Number(dom.id)].originDom.outerHTML;
         }
         // reset Dom node. so re-take domList.
-        let domList = document.querySelectorAll('a[tabindex]:not(a[tabindex="-1"])');
+        let domList = document.querySelectorAll("span.inline");
         domManager.setDomList(domList);
         this.ansDataList = [];
     }
     _storeAns(obj, id) {
-        let data = new ansData(id, obj.text, "", obj);
+        let data = new ansData(id, obj.textContent, "", obj);
         this.ansDataList.push(data);
     }
     _setYourAns() {
@@ -227,7 +228,7 @@ chrome.runtime.onMessage.addListener(
         var config_req = Object.assign({}, request);
 
         if (domManager.domList === null) {
-            let domList = document.querySelectorAll('a[tabindex]:not(a[tabindex="-1"])');
+            let domList = document.querySelectorAll("span.inline");
             domManager.setDomList(domList);
         }
 

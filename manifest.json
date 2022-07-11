@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "quiz maker for Language",
-  "version": "1.0",
+  "version": "1.2",
   "content_scripts": [
     {
       "matches": [
@@ -23,7 +23,7 @@
   "host_permissions": ["*://*.ted.com/talks/*/transcript"],
   "web_accessible_resources": [{
     "resources": ["result_modal.html","style.css"],
-    "matches": [],
+    "matches": ["<all_urls>"],
     "extension_ids": []
   }]
 }
